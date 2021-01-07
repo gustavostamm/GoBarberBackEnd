@@ -33,7 +33,9 @@ class AppointmentsRepository implements IAppointmentsRepository {
           `to_char(${dateFieldName}, 'MM-YYYY') = '${parsedMonth}-${year}'`
         ),
       },
-    })
+    });
+
+    return appointments;
   }
 
   public async findAllInDayFromProvider({ provider_id, day, month, year }: IFindAllInDayFromProviderDTO): Promise<Appointment[]> {
@@ -48,6 +50,8 @@ class AppointmentsRepository implements IAppointmentsRepository {
         ),
       },
     })
+
+    return appointments;
   }
 
   public async create({ provider_id, user_id, date }: ICreateAppointmentDto): Promise<Appointment> {

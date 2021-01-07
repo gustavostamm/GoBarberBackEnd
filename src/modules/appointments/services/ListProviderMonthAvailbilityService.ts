@@ -28,8 +28,6 @@ class ListProviderMonthAvailabilityService {
             year,
         });
 
-        console.log(appointments);
-
         const numberOfDaysInMonth = getDaysInMonth(
             new Date(year, month - 1)
         );
